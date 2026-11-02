@@ -46,7 +46,7 @@ img { display: block; }
 /* HERO */
 #inv { visibility: hidden; }
 #hero { position: relative; height: 100svh; min-height: 600px; overflow: hidden; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 16px; }
-#hero .bg { position: absolute; inset: 0; background: url('assets/1.jpg') center/cover no-repeat; transform: scale(1.15); filter: brightness(.65); }
+#hero .bg { position: absolute; inset: 0; background: url('assets/20.jpg') center/cover no-repeat; transform: scale(1.15); filter: brightness(.65); }
 #hero.go .bg { animation: kb 14s ease-out forwards; }
 @keyframes kb { to { transform: scale(1); } }
 #hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(0,0,0,.1), rgba(0,0,0,.6)); }
@@ -160,7 +160,7 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
 <audio id="aud" loop><source src="assets/song.mp3" type="audio/mpeg"></audio>
 <div id="lb" onclick="cl()"><button aria-label="Cerrar" onclick="cl()">&times;</button><img id="lbi" src="" alt="Ampliación" onclick="event.stopPropagation()"></div>
 
-<div id="cover" onclick="openInv()" style="background-image:url('assets/1.jpg')" role="button" tabindex="0" aria-label="Abrir invitación">
+<div id="cover" onclick="openInv()" style="background-image:url('assets/20.jpg')" role="button" tabindex="0" aria-label="Abrir invitación">
   <div class="n">Andrea y Alexis</div>
   <div class="d dt">20 de marzo de 2027</div>
   <div class="lug">Mazatlán, Sinaloa</div>
@@ -199,12 +199,16 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
   <p class="lugar r">Mazatlán, Sinaloa</p>
   <p class="small r" style="margin-top:6px">Sábado</p>
   <div class="cal r"><div class="m">Marzo 2027</div><div class="g" id="cal"></div></div>
-  <img src="assets/2.jpg" class="ph r" onclick="ol(this.src)" alt="Andrea y Alexis">
+  <img src="assets/21.jpg" class="ph r" onclick="ol(this.src)" alt="Andrea y Alexis">
   <div class="cd r">
     <p class="script" style="margin-bottom:10px">Faltan</p>
     <div id="cdt"><span><b id="dd">00</b>DÍAS</span><span><b id="hh">00</b>HRS</span><span><b id="mm">00</b>MIN</span><span><b id="ss">00</b>SEG</span></div>
   </div>
   <button class="btn r" onclick="ics()"><i class="fa-regular fa-calendar-plus"></i> Agregar al calendario</button>
+  <div style="display:flex;gap:10px;width:100%;margin-top:30px">
+    <img src="assets/28.jpg" class="ph r" style="flex:1;min-width:0;height:240px;object-fit:cover;margin:0" onclick="ol(this.src)" alt="Momento">
+    <img src="assets/29.jpg" class="ph r" style="flex:1;min-width:0;height:240px;object-fit:cover;margin:0" onclick="ol(this.src)" alt="Momento">
+  </div>
 </section>
 
 <!-- COLUMNA 2 -->
@@ -233,8 +237,8 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
   </div>
 
   <div style="display:flex;gap:10px;width:100%">
-    <img src="assets/3.jpg" class="ph r" style="flex:1;min-width:0;height:210px;object-fit:cover" onclick="ol(this.src)" alt="Momento">
-    <img src="assets/4.jpg" class="ph r" style="flex:1;min-width:0;height:210px;object-fit:cover" onclick="ol(this.src)" alt="Momento">
+    <img src="assets/22.jpg" class="ph r" style="flex:1;min-width:0;height:210px;object-fit:cover" onclick="ol(this.src)" alt="Momento">
+    <img src="assets/23.jpg" class="ph r" style="flex:1;min-width:0;height:210px;object-fit:cover" onclick="ol(this.src)" alt="Momento">
   </div>
 
   <h2 class="r">Itinerario</h2>
@@ -246,7 +250,7 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
     <div class="ti r"><div class="ico"><i class="fa-solid fa-music"></i></div><div><div class="hr">19:00 HRS</div><div class="ev">Música y celebración</div></div></div>
     <div class="ti r"><div class="ico"><i class="fa-solid fa-plane-departure"></i></div><div><div class="hr">22:00 HRS</div><div class="ev">“Baja avión”</div></div></div>
   </div>
-  <img src="assets/5.jpg" class="ph r" onclick="ol(this.src)" alt="Momento">
+  <img src="assets/24.jpg" class="ph r" onclick="ol(this.src)" alt="Momento">
 
   <h2 class="r">Hospedaje</h2>
   <div class="orn r"><i class="fa-solid fa-hotel"></i></div>
@@ -263,10 +267,10 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
 
 <!-- COLUMNA 3 -->
 <section class="col">
-  <img src="assets/6.jpg" class="ph r" style="margin-top:0" onclick="ol(this.src)" alt="Momento">
+  <img src="assets/25.jpg" class="ph r" style="margin-top:0" onclick="ol(this.src)" alt="Momento">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%">
-    <img src="assets/7.jpg" class="ph r" style="margin:0;height:240px;object-fit:cover" onclick="ol(this.src)" alt="Momento">
-    <img src="assets/8.jpg" class="ph r" style="margin:0;height:240px;object-fit:cover" onclick="ol(this.src)" alt="Momento">
+    <img src="assets/26.jpg" class="ph r" style="margin:0;height:240px;object-fit:cover" onclick="ol(this.src)" alt="Momento">
+    <img src="assets/27.jpg" class="ph r" style="margin:0;height:240px;object-fit:cover" onclick="ol(this.src)" alt="Momento">
   </div>
   <div class="dress r">
     <p class="small">Código de vestimenta</p>
