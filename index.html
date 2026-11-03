@@ -11,7 +11,7 @@
 <style>
 :root {
   /* Paleta de 3 colores: blanco, negro y verde pálido */
-  --green: #8A9A7B;
+  --sand: #BFA682;
   --ink: #111111;
   --white: #FFFFFF;
   --t: 'Cormorant SC', serif;
@@ -35,13 +35,13 @@ img { display: block; }
 #cover::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,30,22,.85), rgba(20,30,22,.15) 62%); }
 #cover > * { position: relative; color: #fff !important; text-align: center; }
 #cover .n { font-family: var(--s); font-size: clamp(3.2rem, 13vw, 5.4rem); line-height: 1.1; }
-#cover .d { font-size: clamp(.95rem, 4.6vw, 1.5rem); letter-spacing: clamp(2px, 1vw, 5px); margin: 6px 0 4px; }
-#cover .lug { font-family: var(--b); font-size: clamp(1rem, 4vw, 1.25rem); letter-spacing: 3px; margin-bottom: 26px; }
+#cover .d { font-size: clamp(1.1rem, 5vw, 1.6rem); letter-spacing: clamp(2px, .9vw, 5px); margin: 6px 0 4px; }
+#cover .lug { font-family: var(--b); font-size: clamp(1.05rem, 4.4vw, 1.4rem); letter-spacing: 3px; margin-bottom: 26px; }
 #cover .tap { font-family: var(--p); font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; border: 1px solid #fff; padding: 15px 28px; animation: pl 2.4s infinite; }
 @keyframes pl { 50% { opacity: .45; } }
 #cover.out { opacity: 0; transform: scale(1.35); visibility: hidden; }
-#abtn { position: fixed; right: 18px; bottom: 18px; width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--green); background: #fff; color: var(--green); cursor: pointer; z-index: 9000; display: none; align-items: center; justify-content: center; font-size: 1.25rem; }
-:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+#abtn { position: fixed; right: 18px; bottom: 18px; width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--sand); background: #fff; color: var(--sand); cursor: pointer; z-index: 9000; display: none; align-items: center; justify-content: center; font-size: 1.25rem; }
+:focus-visible { outline: 2px solid var(--sand); outline-offset: 2px; }
 
 /* HERO */
 #inv { visibility: hidden; }
@@ -56,8 +56,8 @@ img { display: block; }
 .hn { font-family: var(--t); font-weight: 400; font-size: clamp(3rem, 12vw, 5.5rem); line-height: 1.1; letter-spacing: 4px; margin: 15px 0 25px; opacity: 0; display: flex; flex-direction: column; align-items: center; text-transform: uppercase; }
 .hn .amp { font-style: normal; font-size: .9em; margin-right: 12px; font-weight: 400; }
 #hero.go .hn { animation: up 1.2s ease 1s forwards; }
-.hd { font-size: clamp(1rem, 4.8vw, 1.6rem); letter-spacing: clamp(2px, 1vw, 5px); opacity: 0; }
-.hl2 { font-family: var(--b); font-size: clamp(1rem, 4vw, 1.3rem); letter-spacing: 3px; margin-top: 8px; opacity: 0; }
+.hd { font-size: clamp(1.1rem, 5vw, 1.7rem); letter-spacing: clamp(2px, .9vw, 5px); opacity: 0; }
+.hl2 { font-family: var(--b); font-size: clamp(1.05rem, 4.4vw, 1.45rem); letter-spacing: 3px; margin-top: 8px; opacity: 0; }
 #hero.go .hd { animation: up 1.2s ease 1.4s forwards; }
 #hero.go .hl2 { animation: up 1.2s ease 1.6s forwards; }
 @keyframes up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
@@ -68,57 +68,57 @@ img { display: block; }
 /* LAYOUT */
 .wrap { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 1240px; margin: 0 auto; }
 .col { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 28px; }
-.col + .col { border-left: 1px solid rgba(138,154,123,.4); }
+.col + .col { border-left: 1px solid rgba(191,166,130,.4); }
 h2 { font-family: var(--t); font-weight: 500; font-size: 2.5rem; line-height: 1.1; letter-spacing: 3px; color: var(--ink); margin-top: 48px; }
-.orn { color: var(--green); font-size: 1.3rem; margin: 14px 0 18px; display: flex; align-items: center; gap: 14px; }
-.orn::before, .orn::after { content: ""; width: 50px; height: 1px; background: var(--green); }
+.orn { color: var(--sand); font-size: 1.3rem; margin: 14px 0 18px; display: flex; align-items: center; gap: 14px; }
+.orn::before, .orn::after { content: ""; width: 50px; height: 1px; background: var(--sand); }
 .ph { width: 100%; height: auto; cursor: zoom-in; margin: 30px 0; transition: transform .4s; box-shadow: 0 10px 30px rgba(0,0,0,.05); }
 .ph:hover { transform: scale(1.02); }
 .small { font-family: var(--p); font-size: .95rem; letter-spacing: 3px; text-transform: uppercase; }
 .quote { font-style: italic; font-size: 1.65rem; line-height: 1.6; margin: 6px 0 14px; }
 .par { margin-top: 26px; width: 100%; }
-.par h4 { font-family: var(--p); font-weight: 500; font-size: .9rem; letter-spacing: 3px; color: var(--green); text-transform: uppercase; margin-bottom: 6px; }
+.par h4 { font-family: var(--p); font-weight: 500; font-size: .9rem; letter-spacing: 3px; color: var(--ink); text-transform: uppercase; margin-bottom: 6px; }
 .par p { font-style: italic; font-size: 1.4rem; line-height: 1.5; margin-bottom: 22px; }
-.par .script { font-style: normal; font-family: var(--s); font-size: 3.2rem; line-height: 1.2; color: var(--green); margin-bottom: 14px; }
-.bigdate { font-size: clamp(2rem, 8.5vw, 3rem); letter-spacing: 3px; color: var(--green); }
+.par .script { font-style: normal; font-family: var(--s); font-size: 2.7rem; line-height: 1.2; color: var(--sand); margin-bottom: 14px; }
+.bigdate { font-family: var(--t); font-size: clamp(2.4rem, 9vw, 3.2rem); color: var(--sand); white-space: nowrap; font-variant-numeric: normal; font-feature-settings: normal; }
 .lugar { font-family: var(--b); font-size: 1.35rem; letter-spacing: 3px; text-transform: uppercase; margin: 4px 0 6px; }
 
 /* Calendario */
 .cal { width: 100%; max-width: 340px; margin: 22px auto; font-family: var(--p); font-size: 1.05rem; }
-.cal .m { font-family: var(--t); letter-spacing: 4px; font-size: 1.5rem; margin-bottom: 12px; color: var(--ink); text-transform: uppercase; }
+.cal .m { font-family: var(--t); letter-spacing: 4px; font-size: 1.5rem; margin-bottom: 12px; color: var(--sand); text-transform: uppercase; font-variant-numeric: normal; font-feature-settings: normal; }
 .g { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
-.g b { font-weight: 500; font-size: .8rem; color: var(--green); padding-bottom: 6px; border-bottom: 1px solid rgba(138,154,123,.5); margin-bottom: 6px; }
+.g b { font-weight: 500; font-size: .8rem; color: var(--ink); padding-bottom: 6px; border-bottom: 1px solid rgba(191,166,130,.5); margin-bottom: 6px; }
 .g span { padding: 8px 0; }
-.g .hl { background: var(--green); color: #fff; border-radius: 50%; font-weight: 500; }
-.cd { width: 100%; margin: 28px 0; padding: 24px 0; border-block: 1px solid rgba(138,154,123,.4); }
+.g .hl { background: var(--sand); color: var(--ink); border-radius: 50%; font-weight: 500; }
+.cd { width: 100%; margin: 28px 0; padding: 24px 0; border-block: 1px solid rgba(191,166,130,.4); }
 #cdt { display: flex; justify-content: space-evenly; font-family: var(--p); font-size: .8rem; letter-spacing: 2px; }
 #cdt span { display: flex; flex-direction: column; align-items: center; }
-#cdt b { font-family: var(--b); font-weight: 500; font-size: 2.8rem; color: var(--green); line-height: 1.1; }
-.script { font-family: var(--s); font-size: 2.6rem; line-height: 1.2; color: var(--green); }
+#cdt b { font-family: var(--t); font-weight: 500; font-size: 2.8rem; color: var(--sand); line-height: 1.1; font-variant-numeric: normal; font-feature-settings: normal; }
+.script { font-family: var(--s); font-size: 2.6rem; line-height: 1.2; color: var(--sand); }
 
 /* Botones (negro / verde / blanco) */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-top: 14px; padding: 17px 20px; background: var(--ink); color: #fff; border: 1px solid var(--ink); font-family: var(--p); font-size: .95rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: .3s; }
 .btn:hover { background: transparent; color: var(--ink); }
 .btn.alt { background: transparent; color: var(--ink); }
 .btn.alt:hover { background: var(--ink); color: #fff; }
-.btn.tc { background: var(--green); border-color: var(--green); color: #fff; }
-.btn.tc:hover { background: transparent; color: var(--green); }
+.btn.tc { background: var(--sand); border-color: var(--sand); color: var(--ink); }
+.btn.tc:hover { background: transparent; color: var(--ink); }
 
 /* Ubicaciones */
 .ven { width: 100%; margin-top: 34px; }
-.ven i.ic { font-size: 2.3rem; color: var(--green); margin-bottom: 10px; }
-.ven .tp { font-family: var(--p); font-size: .9rem; letter-spacing: 3px; color: var(--green); text-transform: uppercase; }
-.ven h3 { font-family: var(--t); font-weight: 500; font-size: 2.1rem; line-height: 1.15; color: var(--ink); margin: 6px 0 14px; }
-.ven .vp { width: 100%; height: 220px; object-fit: cover; cursor: zoom-in; box-shadow: 0 4px 15px rgba(0,0,0,.05); }
-.ven .h { font-family: var(--p); font-size: 1.15rem; letter-spacing: 2px; margin: 14px 0; }
+.ven i.ic { font-size: 2.3rem; color: var(--sand); margin-bottom: 10px; }
+.ven .tp { font-family: var(--p); font-size: .9rem; letter-spacing: 3px; color: var(--ink); text-transform: uppercase; }
+.ven h3 { font-family: var(--t); font-weight: 500; font-size: 2.1rem; line-height: 1.15; color: var(--ink); margin: 6px 0 8px; }
+.ven .vp { margin-bottom: 14px; width: 100%; height: 220px; object-fit: cover; cursor: zoom-in; box-shadow: 0 4px 15px rgba(0,0,0,.05); }
+.ven .h { font-family: var(--p); font-size: 1.15rem; letter-spacing: 2px; margin: 0 0 14px; }
 .map { width: 100%; height: 230px; border: 0; box-shadow: 0 4px 15px rgba(0,0,0,.05); }
 
 /* Itinerario: hora e íconos del mismo color, texto negro */
 .tl { width: 100%; text-align: left; position: relative; margin: 10px 0; }
-.tl::before { content: ""; position: absolute; left: 29px; top: 20px; bottom: 20px; width: 2px; background: rgba(138,154,123,.45); }
+.tl::before { content: ""; position: absolute; left: 29px; top: 20px; bottom: 20px; width: 2px; background: rgba(191,166,130,.45); }
 .ti { display: flex; align-items: center; gap: 20px; margin-bottom: 26px; position: relative; }
-.ti .ico { flex: none; width: 60px; height: 60px; border-radius: 50%; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 0 0 6px #F5F5F6; }
-.ti .hr { font-family: var(--p); font-weight: 500; font-size: 1.05rem; color: var(--green); letter-spacing: 1px; }
+.ti .ico { flex: none; width: 60px; height: 60px; border-radius: 50%; background: var(--sand); color: var(--ink); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 0 0 6px #F5F5F6; }
+.ti .hr { font-family: var(--p); font-weight: 500; font-size: 1.05rem; color: var(--sand); letter-spacing: 1px; }
 .ti .ev { font-family: var(--b); font-size: 1.6rem; line-height: 1.15; color: var(--ink); }
 
 /* Hospedaje */
@@ -127,32 +127,49 @@ h2 { font-family: var(--t); font-weight: 500; font-size: 2.5rem; line-height: 1.
 .nota { font-style: italic; margin-top: 20px; }
 
 /* Vestimenta */
-.dress { width: calc(100% + 56px); margin: 40px -28px 0; padding: 54px 28px; background: var(--green); color: #fff !important; }
-.dress h2 { color: #fff; margin-top: 8px; font-size: 2.9rem; }
-.dress .orn { justify-content: center; color: #fff; }
-.dress .orn::before, .dress .orn::after { background: #fff; }
-.dress p { line-height: 1.6; color: #fff; }
+.dress { width: calc(100% + 56px); margin: 40px -28px 0; padding: 54px 28px; background: var(--sand); color: var(--ink) !important; }
+.dress h2 { color: var(--ink); margin-top: 8px; font-size: 2.9rem; }
+.dress .orn { justify-content: center; color: var(--ink); }
+.dress .orn::before, .dress .orn::after { background: var(--ink); }
+.dress p { line-height: 1.6; color: var(--ink); }
 .dress .no { margin-top: 16px; font-style: italic; }
 .dress .btn { background: var(--ink); color: #fff; border-color: var(--ink); }
-.dress .btn:hover { background: transparent; color: #fff; border-color: #fff; }
+.dress .btn:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
 
 /* Formularios */
 .form { width: 100%; margin-top: 26px; }
 .fg { text-align: left; margin-bottom: 22px; }
 .fg label { display: block; font-family: var(--p); font-size: .85rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
-.fg input, .fg select, .fg textarea { width: 100%; padding: 10px 0; background: transparent; border: 0; border-bottom: 1px solid var(--green); font-family: var(--b); font-size: 1.3rem; color: var(--ink); border-radius: 0; }
+.fg input, .fg select, .fg textarea { width: 100%; padding: 10px 0; background: transparent; border: 0; border-bottom: 1px solid var(--sand); font-family: var(--b); font-size: 1.3rem; color: var(--ink); border-radius: 0; }
 .fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-bottom-color: var(--ink); }
-#pase { display: none; margin-top: 18px; padding-bottom: 18px; border-bottom: 1px dashed var(--green); }
+#pase { display: none; margin-top: 18px; padding-bottom: 18px; border-bottom: 1px dashed var(--sand); }
 #pase h3 { font-family: var(--t); font-size: 2.1rem; color: var(--ink); }
-.msg { font-family: var(--p); font-size: .95rem; margin-top: 12px; min-height: 1.3em; color: var(--green); }
+.msg { font-family: var(--p); font-size: .95rem; margin-top: 12px; min-height: 1.3em; color: var(--ink); }
+
+/* Pinterest: indicación de clic */
+.hint { margin-top: 22px; font-family: var(--p); font-size: .95rem; letter-spacing: 1px; }
+.hint i { display: inline-block; margin-right: 6px; animation: bn2 1.4s ease-in-out infinite; }
+@keyframes bn2 { 50% { transform: translateY(6px); } }
+.pulse { animation: pls 2s infinite; }
+@keyframes pls { 0% { box-shadow: 0 0 0 0 rgba(17,17,17,.45); } 70% { box-shadow: 0 0 0 14px rgba(17,17,17,0); } 100% { box-shadow: 0 0 0 0 rgba(17,17,17,0); } }
+
+/* RSVP personalizado */
+#pase .txt { font-style: italic; font-size: 1.15rem; line-height: 1.5; margin-top: 12px; }
+#pase .txt.sm { font-size: 1rem; }
+.lst { display: none; text-align: left; margin-top: 22px; }
+.lst .small { margin-bottom: 8px; }
+.gr { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px dashed var(--sand); font-size: 1.25rem; }
+.gr .op { display: flex; gap: 16px; flex: none; }
+.gr label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.gr input { accent-color: var(--ink); width: 18px; height: 18px; }
 
 /* Lightbox */
 #lb { position: fixed; inset: 0; background: rgba(0,0,0,.94); z-index: 10000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: .3s; }
 #lb.on { opacity: 1; visibility: visible; }
 #lb img { max-width: 95%; max-height: 90vh; }
 #lb button { position: absolute; top: 14px; right: 20px; background: none; border: 0; color: #fff; font-size: 2.8rem; cursor: pointer; }
-footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,154,123,.4); font-family: var(--p); font-size: .75rem; letter-spacing: 5px; text-transform: uppercase; }
-@media(max-width: 992px) { .wrap { grid-template-columns: 1fr; } .col + .col { border-left: 0; border-top: 1px solid rgba(138,154,123,.4); } }
+footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(191,166,130,.4); font-family: var(--p); font-size: .75rem; letter-spacing: 5px; text-transform: uppercase; }
+@media(max-width: 992px) { .wrap { grid-template-columns: 1fr; } .col + .col { border-left: 0; border-top: 1px solid rgba(191,166,130,.4); } }
 </style>
 </head>
 <body>
@@ -191,11 +208,11 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
   <div class="par r">
     <p class="script">Con la bendición de nuestros padres</p>
     <h4>Padres de la novia</h4><p>Armando Manuel Espinosa Mercado<br>Paulina Maciel Méndez</p>
-    <h4>Padres del novio</h4><p>Fernando García Félix<br>Mayra Sánchez Gómez</p>
+    <h4>Padres del novio</h4><p>Fernando García Félix (†)<br>Mayra Sánchez Gómez</p>
   </div>
   <div class="orn r"><i class="fa-solid fa-heart" style="font-size:.9rem"></i></div>
   <p class="small r">Reserva la fecha</p>
-  <div class="bigdate dt r">20 &bull; 03 &bull; 2027</div>
+  <div class="bigdate r">20 &bull; 03 &bull; 2027</div>
   <p class="lugar r">Mazatlán, Sinaloa</p>
   <p class="small r" style="margin-top:6px">Sábado</p>
   <div class="cal r"><div class="m">Marzo 2027</div><div class="g" id="cal"></div></div>
@@ -219,9 +236,9 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
   <div class="ven r">
     <i class="fa-solid fa-church ic"></i>
     <p class="tp">Ceremonia religiosa</p>
-    <h3>Iglesia San Judas Tadeo</h3>
-    <img src="assets/templo.jpg" class="vp" onclick="ol(this.src)" alt="Iglesia San Judas Tadeo">
+    <h3>Templo San Judas Tadeo</h3>
     <p class="h">12:00 P.M.</p>
+    <img src="assets/templo.jpg" class="vp" onclick="ol(this.src)" alt="Templo San Judas Tadeo">
     <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3665.509308691689!2d-106.46357282443512!3d23.260936607390516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869f54b4d668cd17%3A0xf41243c352acbae0!2sTemplo%20San%20Judas%20Tadeo!5e0!3m2!1ses-419!2smx!4v1792791974238!5m2!1ses-419!2smx" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa ceremonia"></iframe>
     <a class="btn" href="https://maps.app.goo.gl/Tj9pHzJAr42o2qrYA" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Ubicación exacta</a>
   </div>
@@ -230,8 +247,8 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
     <i class="fa-solid fa-champagne-glasses ic"></i>
     <p class="tp">Recepción</p>
     <h3>Baraka Beach Club</h3>
-    <img src="assets/salon.jpg" class="vp" onclick="ol(this.src)" alt="Baraka Beach Club">
     <p class="h">4:30 P.M.</p>
+    <img src="assets/salon.jpg" class="vp" onclick="ol(this.src)" alt="Baraka Beach Club">
     <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3664.470015639099!2d-106.48755482443417!3d23.2986996059669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1407b23cb92903eb%3A0x8c75f5584ce390d4!2sBaraka%20Beach%20Club!5e0!3m2!1ses-419!2smx!4v1792792081198!5m2!1ses-419!2smx" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa recepción"></iframe>
     <a class="btn" href="https://maps.app.goo.gl/UUaHccA98tAHQCbD7" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i> Ubicación exacta</a>
   </div>
@@ -262,7 +279,7 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
     <a class="btn alt r" href="https://share.google/FCfSrkHQH6vEySeOY" target="_blank" rel="noopener"><i class="fa-solid fa-bed"></i> Diamond Bay Boutique Resort</a>
     <a class="btn alt r" href="https://share.google/BJR0zL0O9Kzb6sd8f" target="_blank" rel="noopener"><i class="fa-solid fa-bed"></i> Wyndham Garden Mazatlán Marina</a>
   </div>
-  <p class="nota r">Airbnb también sería una gran opción, con lugares muy lindos para todos los gustos y presupuestos.</p>
+  <p class="nota r">Airbnb también es una gran alternativa, con diversas opciones para todos los gustos.</p>
 </section>
 
 <!-- COLUMNA 3 -->
@@ -279,7 +296,8 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
     <p>Temática tropical. Te sugerimos asistir con colores vivos.</p>
     <p class="no">El blanco, beige e ivory se reservan para la novia, igual que los vestidos estampados donde predomine alguno de esos colores.</p>
     <p class="no">Por la tarde el clima será caluroso, pero por la noche podría hacer frío. Te sugerimos llevar un abrigo o chal ligero.</p>
-    <a class="btn" id="pin" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-pinterest"></i> Inspo en Pinterest</a>
+    <p class="hint" id="pinh"><i class="fa-solid fa-hand-point-down"></i> Toca el botón para ver el tablero</p>
+    <a class="btn pulse" id="pin" href="#" target="_blank" rel="noopener"><i class="fa-brands fa-pinterest"></i> Ideas de outfit <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.8em"></i></a>
   </div>
 
   <h2 class="r">Solo adultos</h2>
@@ -291,7 +309,7 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
   <p class="r">Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros:</p>
   <a class="btn tc r" href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60033589" target="_blank" rel="noopener"><i class="fa-solid fa-gift"></i> Liverpool · 60033589</a>
   <a class="btn alt r" href="https://www.amazon.com.mx/wedding/guest-view/3S6A2FNABQDA7" target="_blank" rel="noopener"><i class="fa-brands fa-amazon"></i> Mesa en Amazon</a>
-  <p class="r" style="margin-top:20px"><i class="fa-regular fa-envelope" style="color:var(--green)"></i> Habrá un buzón junto a la pista de baile para la lluvia de sobres.</p>
+  <p class="r" style="margin-top:20px"><i class="fa-regular fa-envelope" style="color:var(--sand)"></i> Habrá un buzón junto a la pista de baile para la lluvia de sobres.</p>
 
   <div id="gal" style="display:none;width:100%">
     <h2 class="r">Galería en vivo</h2>
@@ -304,14 +322,19 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
   <div class="orn r"><i class="fa-solid fa-envelope-open-text"></i></div>
   <p class="small r">Confirma antes del 6 de febrero de 2027</p>
   <div id="pase" class="r">
-    <p class="small" style="color:var(--green)">Pase personal</p>
+    <p class="small" style="color:var(--sand)">Pase personal</p>
     <h3 id="gn"></h3>
-    <p>Lugares reservados: <b id="gp" style="color:var(--green);font-size:1.5rem"></b></p>
+    <p>Lugares reservados: <b id="gp" style="color:var(--sand);font-size:1.5rem"></b></p>
+    <p class="txt">Queremos compartir este día tan especial con las personas que amamos. Por ello, los lugares han sido reservados especialmente para cada invitado.</p>
+    <p class="txt sm">(Los boletos son únicos e intransferibles, agradecemos su comprensión, gracias)</p>
   </div>
   <form class="form r" onsubmit="return false">
+    <div id="lst" class="lst"><p class="small">Selecciona quiénes asisten:</p><div id="gl"></div></div>
+    <div id="gen">
     <div class="fg"><label for="rn">Nombre completo</label><input type="text" id="rn" placeholder="Escribe tu nombre"></div>
     <div class="fg"><label for="ra">Respuesta</label>
       <select id="ra"><option value="">Selecciona una opción</option><option>¡Sí, asistiré con gusto!</option><option>Lamento no poder acompañarlos</option></select></div>
+    </div>
     <button type="button" class="btn" onclick="sendRSVP()"><i class="fa-brands fa-whatsapp"></i> Confirmar asistencia</button>
     <p class="msg" id="m1" role="status"></p>
   </form>
@@ -336,6 +359,7 @@ const WA="523311865629";
 const SHEETS_URL="";      // <-- URL de tu Apps Script (termina en /exec)
 const PINTEREST_URL="https://pin.it/29jQlmPbV";
 const GALERIA_URL="";     // <-- link/QR de la galería en vivo (si está vacío, la sección se oculta)
+let GUESTS=[];
 const FECHA=new Date("2027-03-20T12:00:00-07:00");
 
 /* ===== Portada + animación de entrada ===== */
@@ -369,7 +393,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')cl()});
   const p=n=>String(n).padStart(2,'0');
   const t=setInterval(()=>{
     const d=FECHA-new Date();
-    if(d<0){clearInterval(t);document.getElementById('cdt').innerHTML='<span style="font-family:var(--t);font-size:2rem;width:100%;color:var(--green)">¡Hoy es el gran día!</span>';return}
+    if(d<0){clearInterval(t);document.getElementById('cdt').innerHTML='<span style="font-family:var(--t);font-size:2rem;width:100%;color:var(--sand)">¡Hoy es el gran día!</span>';return}
     document.getElementById('dd').textContent=p(Math.floor(d/864e5));
     document.getElementById('hh').textContent=p(Math.floor(d%864e5/36e5));
     document.getElementById('mm').textContent=p(Math.floor(d%36e5/6e4));
@@ -382,14 +406,27 @@ document.addEventListener('DOMContentLoaded',()=>{
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.r').forEach(el=>io.observe(el));
   const pin=document.getElementById('pin');
-  if(PINTEREST_URL)pin.href=PINTEREST_URL;else pin.style.display='none';
+  if(PINTEREST_URL)pin.href=PINTEREST_URL;else{pin.style.display='none';document.getElementById('pinh').style.display='none'}
   if(GALERIA_URL){document.getElementById('galbtn').href=GALERIA_URL;document.getElementById('gal').style.display='flex';document.getElementById('gal').style.flexDirection='column';document.getElementById('gal').style.alignItems='center'}
+  /* Pase personal: ?invitados=Nombre 1,Nombre 2,Nombre 3  (o ?invitado=Familia&pases=4) */
   const q=new URLSearchParams(location.search),inv=q.get('invitado'),ps=q.get('pases')||q.get('p');
-  if(ps){
+  GUESTS=(q.get('invitados')||'').split(/[|,]/).map(x=>x.trim()).filter(Boolean);
+  if(GUESTS.length||ps){
     document.getElementById('pase').style.display='block';
-    document.getElementById('gn').textContent=inv||'Pase especial';
-    document.getElementById('gp').textContent=ps;
-    if(inv)document.getElementById('rn').value=inv;
+    document.getElementById('gn').textContent=GUESTS.length?(GUESTS.length>1?GUESTS.slice(0,-1).join(', ')+' y '+GUESTS[GUESTS.length-1]:GUESTS[0]):(inv||'Pase especial');
+    document.getElementById('gp').textContent=GUESTS.length||ps;
+    if(GUESTS.length){
+      const box=document.getElementById('gl');
+      GUESTS.forEach((n,i)=>{
+        const r=document.createElement('div');r.className='gr';
+        const sp=document.createElement('span');sp.textContent=n;
+        const o=document.createElement('div');o.className='op';
+        ['Sí','No'].forEach(v=>{const l=document.createElement('label'),ip=document.createElement('input');ip.type='radio';ip.name='g'+i;ip.value=v;l.appendChild(ip);l.appendChild(document.createTextNode(v));o.appendChild(l)});
+        r.appendChild(sp);r.appendChild(o);box.appendChild(r);
+      });
+      document.getElementById('lst').style.display='block';
+      document.getElementById('gen').style.display='none';
+    }else if(inv)document.getElementById('rn').value=inv;
   }
 });
 
@@ -401,6 +438,17 @@ function toSheet(d){
 function wa(t){window.open(`https://wa.me/${WA}?text=${encodeURIComponent(t)}`,'_blank')}
 function sendRSVP(){
   const n=document.getElementById('rn').value.trim(),a=document.getElementById('ra').value,m=document.getElementById('m1');
+  if(GUESTS.length){
+    const r=GUESTS.map((g,i)=>{const c=document.querySelector('input[name="g'+i+'"]:checked');return{g,v:c?c.value:null}});
+    if(r.some(x=>!x.v)){m.textContent='Selecciona Sí o No para cada invitado.';return}
+    const si=r.filter(x=>x.v==='Sí').map(x=>x.g),no=r.filter(x=>x.v==='No').map(x=>x.g);
+    m.textContent='Enviando...';
+    toSheet({tipo:'confirmacion',grupo:GUESTS.join(', '),asisten:si.join(', '),no_asisten:no.join(', '),lugares:GUESTS.length}).then(()=>{
+      m.textContent='¡Gracias! Se abrirá WhatsApp para terminar.';
+      wa('Hola, confirmamos para la boda de Andrea y Alexis.'+(si.length?'\n\n✅ Asisten: '+si.join(', '):'')+(no.length?'\n❌ No asisten: '+no.join(', '):''));
+    });
+    return;
+  }
   if(!n||!a){m.textContent='Completa tu nombre y tu respuesta.';return}
   m.textContent='Enviando...';
   toSheet({tipo:'confirmacion',nombre:n,respuesta:a}).then(()=>{
@@ -421,7 +469,7 @@ function sendWish(){
 
 /* ===== .ics ===== */
 function ics(){
-  const c=`BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Boda Andrea y Alexis//ES\nBEGIN:VEVENT\nDTSTART:20270320T190000Z\nDTEND:20270321T050000Z\nSUMMARY:Boda de Andrea y Alexis\nLOCATION:Iglesia San Judas Tadeo\\, Mazatlán\\, Sinaloa\nDESCRIPTION:Ceremonia 12:00 hrs. Recepción 16:30 hrs en Baraka Beach Club.\nEND:VEVENT\nEND:VCALENDAR`;
+  const c=`BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Boda Andrea y Alexis//ES\nBEGIN:VEVENT\nDTSTART:20270320T190000Z\nDTEND:20270321T050000Z\nSUMMARY:Boda de Andrea y Alexis\nLOCATION:Templo San Judas Tadeo\\, Mazatlán\\, Sinaloa\nDESCRIPTION:Ceremonia 12:00 hrs. Recepción 16:30 hrs en Baraka Beach Club.\nEND:VEVENT\nEND:VCALENDAR`;
   const u=URL.createObjectURL(new Blob([c],{type:'text/calendar;charset=utf-8'})),a=document.createElement('a');
   a.href=u;a.download='Boda_Andrea_y_Alexis.ics';document.body.appendChild(a);a.click();a.remove();
 }
