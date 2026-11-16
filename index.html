@@ -359,7 +359,7 @@ footer { text-align: center; padding: 36px 20px; border-top: 1px solid rgba(138,
 <script>
 /* ===== CONFIGURACIÓN ===== */
 const WA="523311865629";
-const SHEETS_URL="";      // <-- URL de la Web App de Apps Script (termina en /exec)
+const SHEETS_URL="https://script.google.com/macros/s/AKfycbw5SdiAKvYPFU7xe7KzADvTQ_GtlMuINW_eibWSQboyaOuCEEYAJy4cAa9gqOCxVPu1bA/exec";      // <-- URL de la Web App de Apps Script (termina en /exec)
 const ABRIR_WA=true;      // true = tras confirmar también abre WhatsApp; false = solo guarda en la hoja
 const PINTEREST_URL="https://pin.it/29jQlmPbV";
 const GALERIA_URL="https://drive.google.com/drive/folders/1NZPg0BY1yzO1yw488Vz-BCLdnv0R7UEl?usp=sharing";     // <-- link/QR de la galería en vivo (si está vacío, la sección se oculta)
@@ -416,31 +416,44 @@ document.addEventListener('DOMContentLoaded',()=>{
   loadGuest();
 });
 
-/* ===== Pase nominal: ?id=n (consulta la lista en Google Sheets) ===== */
-async function loadGuest(){
-  if(ID&&SHEETS_URL){
-    try{
-      const r=await fetch(SHEETS_URL+'?action=guest&id='+encodeURIComponent(ID)),d=await r.json();
-      if(d&&d.ok){GUESTS=d.nombres||[];PASES=d.pases||GUESTS.length;PREV=d.respuestas||{}}
-    }catch(e){}
-  }
-  if(!GUESTS.length){ /* respaldo para pruebas: ?invitados=Nombre 1,Nombre 2 */
-    GUESTS=(new URLSearchParams(location.search).get('invitados')||'').split(/[|,]/).map(x=>x.trim()).filter(Boolean);PASES=GUESTS.length;
-  }
+/* ===== Pase nominal: ?id=n =====
+   Los pases se muestran al instante desde LISTA (respaldo integrado) y luego se sincronizan
+   con Google Sheets, que tiene prioridad y devuelve respuestas ya registradas. */
+const LISTA={"1":{"n":["Armando Espinosa Mercado","Paulina Maciel Méndez","Armando Espinosa Maciel","Giselle García Ramírez","Juan Pablo Espinosa Maciel","Acompañante de Armando Espinosa Mercado"],"p":6},"2":{"n":["Manuel Dávalos Goñi","Acompañante de Manuel Dávalos Goñi"],"p":2},"3":{"n":["Patricia Espinosa","Acompañante de Patricia Espinosa"],"p":2},"4":{"n":["Cynthia Gómez","Acompañante de Cynthia Gómez"],"p":2},"5":{"n":["Christian Gómez","Vanessa Guzmán"],"p":2},"6":{"n":["Alan Gómez","Alejandra Luna"],"p":2},"7":{"n":["Lucía Espinosa","Francisco Zárate","Giselle Zárate"],"p":3},"8":{"n":["Mónica Espinosa","Herb Sarnoff","Julia Sarnoff","Acompañante de Mónica Espinosa"],"p":4},"9":{"n":["Eric Sarnoff","Acompañante de Eric Sarnoff"],"p":2},"10":{"n":["Rosio Maciel","Alfonso Espinosa"],"p":2},"11":{"n":["Angelina Maciel","Antonio Marín Verduzco"],"p":2},"12":{"n":["Marco Antonio Marín","Paola Navarro"],"p":2},"13":{"n":["Miguel Alejandro Marín","María Eugenia Ruizvelasco"],"p":2},"14":{"n":["José David Marín","Maya Johnson"],"p":2},"15":{"n":["Patricia Maciel","Juan Garza"],"p":2},"16":{"n":["Patricia Garza","Carlos González"],"p":2},"17":{"n":["Lourdes Maciel","Adolfo Andrade","Mateo Andrade","Ivana Andrade","Darío Andrade","Saulo Andrade"],"p":6},"18":{"n":["Adriana Maciel","Renata Juárez"],"p":2},"19":{"n":["Irene Maciel","Luis Delaye"],"p":2},"20":{"n":["Miguel Maciel","Rosa Hilda Viilanueva"],"p":2},"21":{"n":["Rosa Maciel","Eduardo Hernández"],"p":2},"22":{"n":["Claudia Maciel","Óscar García","Fernanda García","Paula García"],"p":4},"23":{"n":["María Teresa Maciel","Juan Manuel Reyes"],"p":2},"24":{"n":["Raquel Reyes","Carlos Anaya"],"p":2},"25":{"n":["David Maciel","Angélica Ramos"],"p":2},"26":{"n":["Mayra Sánchez Gómez","Ricardo Gómez","Dianely García Sánchez","Bryan Moreno Montes"],"p":4},"27":{"n":["María Elena Félix","Laura García"],"p":2},"28":{"n":["Kathia García","Iván Díaz"],"p":2},"29":{"n":["Catalina García","Mene Larios"],"p":2},"30":{"n":["Julia Gómez","Nancy Sánchez","Jesús Pérez","Evelyn Alcaráz","Adrián Alcaráz","Orlando Alcaráz"],"p":6},"31":{"n":["Sandra Sánchez","Juan José Martínez"],"p":2},"32":{"n":["Heimy Martínez","José Gaspar"],"p":2},"33":{"n":["Luis Manuel Martínez","Valeria Ruíz"],"p":2},"34":{"n":["Juan José Martínez","Jennifer Tirado"],"p":2},"35":{"n":["Beatriz Sánchez","Julia Díaz"],"p":2},"36":{"n":["Alejandra Díaz","Carlos Gaspar"],"p":2},"37":{"n":["José Díaz","Mey Moreno"],"p":2},"38":{"n":["Alfredo Díaz","Dani Ponce"],"p":2},"39":{"n":["Araceli Sánchez","Aarón López"],"p":2},"40":{"n":["Enedina Sánchez","Domingo Valdez"],"p":2},"41":{"n":["Cristal Valdez","Manuel Torres"],"p":2},"42":{"n":["Sergio Valdez","Lucero Valdez"],"p":2},"43":{"n":["Edgar Valdez","Eliana Valdez"],"p":2},"44":{"n":["Rodolfo Sánchez","Rebeca Pineda"],"p":2},"45":{"n":["Alejandro Sánchez","María Elena Úrias"],"p":2},"46":{"n":["Víctor Sánchez","Rommy Rubio"],"p":2},"47":{"n":["Andrea Mercado","Alejandro Maldonado"],"p":2},"48":{"n":["Alexis Alvíter","Acompañante de Alexis Alvíter"],"p":2},"49":{"n":["Esteban Oropeza","Acompañante de Esteban Oropeza"],"p":2},"50":{"n":["Janet Conde","Erwin Lindoro"],"p":2},"51":{"n":["Luis Mario García","Acompañante de Luis Mario García"],"p":2},"52":{"n":["Ignacio Rendón","Acompañante de Ignacio Rendón"],"p":2},"53":{"n":["Mónica Tufiño","Acompañante de Mónica Tufiño"],"p":2},"54":{"n":["Andrés Morán"],"p":1},"55":{"n":["Oliver Rodríguez","Melissa Díaz"],"p":2},"56":{"n":["Josué Pérez","Geraldine Ortega"],"p":2},"57":{"n":["Aarón Caro","Esmeralda Nevarez"],"p":2},"58":{"n":["Joas Figueroa","Acompañante de Joas Figueroa"],"p":2},"59":{"n":["Carlos Macías","Acompañante de Carlos Macías"],"p":2},"60":{"n":["Salvador González","Carolina Comparán"],"p":2},"61":{"n":["Carmelo Reyes","Irais Sánchez"],"p":2},"62":{"n":["Daniel Quintana","Abigail Sarabia"],"p":2},"63":{"n":["Erick Tirado","Acompañante de Erick Tirado"],"p":2},"64":{"n":["Evan Tirado","Karina Lizárraga"],"p":2},"65":{"n":["Martín Hernández","Alejandra Monreal"],"p":2},"66":{"n":["Alexis Pérez","Magui Esparza"],"p":2},"67":{"n":["Brandon Aguayo","Rosa Arellano"],"p":2},"68":{"n":["Marco Zataraín","Cinthia López"],"p":2},"69":{"n":["Rafael Chávez","Ana Contreras"],"p":2},"70":{"n":["Emmanuel Fernández","Acompañante de Emmanuel Fernández"],"p":2},"71":{"n":["Mariano Velasco","Faty Mendoza"],"p":2},"72":{"n":["Juan Velasco","Acompañante de Juan Velasco"],"p":2},"73":{"n":["Antonio Arenas","Ernestina Cornejo"],"p":2},"74":{"n":["Andrés Valdez","Acompañante de Andrés Valdez"],"p":2},"75":{"n":["José Ángel Pérez","Laura Ávila","Adán Pérez"],"p":3},"76":{"n":["Ricardo Núñez","Aida González"],"p":2},"77":{"n":["Liliana Escalante","Víctor Ordóñez"],"p":2},"78":{"n":["Matilde Hernández","Alejandro Aguilar"],"p":2},"79":{"n":["Krinni Zulas","Miguel González"],"p":2},"80":{"n":["José Luis Palazuelos","Araceli Pérez"],"p":2},"81":{"n":["David Caralí","Acompañante de David Caralí"],"p":2},"82":{"n":["Bub Mueller","Stacey Mueller"],"p":2},"83":{"n":["Berenice Gutiérrez","Hugo Pérez"],"p":2},"84":{"n":["Celia Gómez","Héctor Martínez"],"p":2},"85":{"n":["Leticia Gómez","José Antonio Limón"],"p":2},"86":{"n":["Sandra Briseño","Juan Ulin"],"p":2}};
+function renderGuest(){
   if(!GUESTS.length)return;
-  document.getElementById('gp').textContent=PASES;
-  document.getElementById('pase').style.display='block';
-  const box=document.getElementById('gl');box.textContent='';
+  const cur={};
+  document.querySelectorAll('#gl .gr').forEach(r=>{const c=r.querySelector('input:checked');if(c)cur[r.querySelector('span').textContent]=c.value});
+  const pase=document.getElementById('pase'),box=document.getElementById('gl');
+  document.getElementById('gp').textContent=PASES||GUESTS.length;
+  pase.style.display='block';pase.classList.add('v');
+  box.textContent='';
   GUESTS.forEach((n,i)=>{
     const r=document.createElement('div');r.className='gr';
     const sp=document.createElement('span');sp.textContent=n;
     const o=document.createElement('div');o.className='op';
-    ['Sí','No'].forEach(v=>{const l=document.createElement('label'),ip=document.createElement('input');ip.type='radio';ip.name='g'+i;ip.value=v;if(PREV[n]===v)ip.checked=true;l.appendChild(ip);l.appendChild(document.createTextNode(v));o.appendChild(l)});
+    ['Sí','No'].forEach(v=>{const l=document.createElement('label'),ip=document.createElement('input');ip.type='radio';ip.name='g'+i;ip.value=v;if((cur[n]||PREV[n])===v)ip.checked=true;l.appendChild(ip);l.appendChild(document.createTextNode(v));o.appendChild(l)});
     r.appendChild(sp);r.appendChild(o);box.appendChild(r);
   });
   document.getElementById('lst').style.display='block';
   document.getElementById('gen').style.display='none';
   if(Object.keys(PREV).length)document.getElementById('m1').textContent='Ya registraste tu respuesta. Puedes modificarla si lo necesitas.';
+}
+async function loadGuest(){
+  const L=ID&&LISTA[ID];
+  if(L){GUESTS=L.n.slice();PASES=L.p;renderGuest()}
+  else if(!ID){ /* respaldo para pruebas: ?invitados=Nombre 1,Nombre 2 */
+    GUESTS=(new URLSearchParams(location.search).get('invitados')||'').split(/[|,]/).map(x=>x.trim()).filter(Boolean);PASES=GUESTS.length;renderGuest();
+  }
+  if(ID&&SHEETS_URL){
+    try{
+      const c=new AbortController(),t=setTimeout(()=>c.abort(),9000);
+      const r=await fetch(SHEETS_URL+'?action=guest&id='+encodeURIComponent(ID),{signal:c.signal});clearTimeout(t);
+      const d=await r.json();
+      if(d&&d.ok){if(d.nombres&&d.nombres.length)GUESTS=d.nombres;PASES=d.pases||GUESTS.length;PREV=d.respuestas||{};renderGuest()}
+    }catch(e){}
+  }
+  if(ID&&!GUESTS.length)document.getElementById('m1').textContent='No encontramos tu pase. Escríbenos por WhatsApp para ayudarte.';
 }
 
 /* ===== Envío a Google Sheets + WhatsApp ===== */
